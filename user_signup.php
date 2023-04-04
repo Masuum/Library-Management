@@ -7,7 +7,7 @@
    <body onload="load()">
 
 
-      <!-- PHP HERE -->
+      <!-- PHP HERE INSIDE THIS POSITION -->
 
 
       <!--loader here-->
