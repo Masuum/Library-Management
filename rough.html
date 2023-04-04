@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>ROUGH</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+         *
+         {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+         .container
+         {
+            display: flex;
+            height: 730px;
+            width: 70%;
+            background-image: linear-gradient(to bottom right, rgb(212, 225, 249), rgba(10, 172, 197, 0.859));
+            margin-left: 15%;
+            padding-top: 75px;
+         }
+         .mainbox
+         {
+            display: flex;
+            background-color: #fff;
+            height: 550px;
+            width: 80%;
+            margin-left: 10%;
+            border-radius: 30px;
+            border-color: transparent;
+            box-shadow:3px 3px 10px #6d6969;
+         }
+         .textalign
+         {
+            text-align: center;
+         }
+         .div
+         {
+            height: 100%;
+            width: 50%;
+   
+         }
+         .right
+         {
+            float: right;
+         }
+         .left
+         {
+            float: left;
+         }
+         .background
+         {
+            display: flex;
+            background-image: url(../Bookreader/imgs/welbook.jpeg);
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+         }
+         .h1
+         {
+            background-color: #131313;
+            height: 6%;
+            width: 90%;
+            margin-top: 64%;
+            margin-left: 5%;
+            padding-left: 1px;
+            border-radius: 5px;
+            opacity: 0.50;
+         }
+         .form
+         {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+            width: 80%;
+            align-items: center;
+            margin-left: 10%;
+            margin-top: 15%;
+         }
+         input[type=text]
+         {
+            width: 100%;
+            padding: 5px 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 20px;
+            background-color: #dfdfdf;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+         }
+         .texth
+         {
+            font-family: Segoe Script;
+         }
+         .text
+         {
+            font-family: Trebuchet MS;
+         }
+         .shadow
+         {
+            font-size: 20px;
+            color:#ffffff;
+         }
+         textsize
+         {
+            font-weight: bold;
+         }
+         .ftxtsiz
+         {
+            font-size: 14px;
+         }
+         .text1
+         {
+            color: #bcbbbb;
+            font-family: Courier New;
+            font-size: 14px
+         }
+         ::placeholder
+         {
+            font-family: Courier New;
+            font-size: small;
+            color: #807f7f;
+         }
+         input[type=text]:hover
+         {
+            background-color: #fff;
+            transition: all 0.5s;
+            border-bottom: 3px solid rgba(8, 129, 148, 0.859);
+         }
+         input[type=text]:focus
+         {
+            color: #0a0a0a;
+         }
+         input[type=password]
+         {
+            width: 100%;
+            padding: 5px 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 20px;
+            background-color: #dfdfdf;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+         }
+         input[type=password]:hover
+         {
+            background-color: #fff;
+            transition: all 0.5s;
+            border-bottom:3px solid rgba(8, 129, 148, 0.859);
+         }
+         input[type=password]:focus
+         {
+            color: #0a0a0a;
+         }
+         .radio
+         {
+            display: flex;
+            border-radius: 10px;
+            width: 175px;
+            height: 39px;
+            padding-left: 2px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            background-color: #ffffff;
+         }
+      
+         input[type=radio]
+         {
+            position: absolute;
+            visibility: hidden;
+            display: none;
+         }
+         label
+         {
+            margin-left: -7px;
+            align-items: center; 
+            cursor: pointer;
+            background-color: rgb(212, 225, 249);
+            color: rgb(1, 1, 1);
+            padding: 5px;
+            border-radius: 5px;
+         }
+         label:hover
+         {
+            background-color: rgba(10, 172, 197, 0.859);
+            color: rgb(255, 255, 255);
+            transition: all 0.25s;
+         }
+         .button
+         {
+            margin-top: 15px;
+            width: 90px;
+            height: 35px;
+            background-color: rgb(212, 225, 249);
+            color: #0a0a0a;
+            border-color: transparent;
+            border-radius:77px;
+            position: absolute;
+            box-shadow: 0px 1px 1px 1px rgb(17, 17, 17);
+            cursor: pointer;
+         }
+         button:hover
+         {
+            background-color: rgba(8, 129, 148, 0.859);
+            transition: all 0.25s;
+            /*border-color:#150202 ;*/
+            color: #fff;
+         }
+         p
+         {
+            text-align: center;
+         }
+         .a
+         {
+            color: rgba(8, 129, 148, 0.859);
+         }
+         a:hover
+         {
+            color: red;
+            transition: all, 0.10s;
+         }
+
+
+
+         /*----loading css----*/
+
+         
+         body
+         {
+            font-family: 'Brush Script MT';
+         }
+         #loadbox
+         {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #ffffff;
+            z-index: 99999;
+         }
+         .center
+{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+.wave {
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(45deg, rgb(8, 129, 148), #000000);
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+      </style>
+
+   </head>
+   <body onload="load()">
+      <!--loader here-->
+      <div id="loadbox">
+         <div class="center">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+      </div>
+
+      <div class="container"><!-- Main Container Starts-->
+         <div class="mainbox"><!-- All Content Box-->
+            <div class="div left background">
+               <h2 class="h1 textalign texth shadow"> A platform for every reading need</h2>
+            </div>
+            <div class="div right">
+               <h1 class="textalign texth" style="margin-top:10px ;"><b>R E G I S T E R</b></h1>
+               <p class="textalign text1"><b>Books are just a few clicks away!</b></p>
+               <div class="form"><!-- Signup Form starts here -->
+                  <form>
+                     <table>
+                        <tr><!-- For name starts-->
+                           <td class="text ftxtsiz">
+                              Name:
+                           </td>
+                           <td>
+                              <input type="text" placeholder="Enter your name" name="name">
+                           </td>
+                        </tr><!-- Name ends-->
+                        <tr><!-- For email starts-->
+                           <td class="text ftxtsiz">
+                              Email:
+                           </td>
+                           <td>
+                              <input type="text" placeholder="Enter your mail" name="email">
+                           </td>
+                        </tr><!-- Email ends-->
+                        <tr><!-- For Phone No starts-->
+                           <td class="text ftxtsiz">
+                              Phone Number:
+                           </td>
+                           <td>
+                              <input type="text" placeholder="Enter your Number" name="phone">
+                           </td>
+                        </tr><!-- Phone No ends-->
+                        <tr><!-- For gender starts-->
+                           <td class="text ftxtsiz">
+                              Gender:
+                           </td>
+                           <td class="text ftxtsiz">
+                              <div class="radio">
+                                 <input type="radio" value="m" name="gender" id="male">
+                                 <label for="male">Male</label>
+                     
+                                 <input type="radio" value="f" name="gender" id="female">
+                                 <label for="female">Female</label>
+                     
+                                 <input type="radio" value="o" name="gender" id="others">
+                                 <label for="others">Others</label>
+                              </div>
+                           </td>
+                        </tr><!-- Gender ends-->
+                        <tr><!-- For password starts-->
+                           <td class="text ftxtsiz">
+                              Password:
+                           </td>
+                           <td>
+                              <input type="password" placeholder="Enter Password" name="password">
+                           </td>
+                        </tr><!-- Password ends-->
+                        <tr><!-- For confirm password starts-->
+                           <td class="text ftxtsiz">
+                              Confirm Password:
+                           </td>
+                           <td>
+                              <input type="password" placeholder="Confirm the password" name="cpassword">
+                           </td>
+                        </tr><!-- Confirm password ends-->
+                        <tr><!-- For buttons starts-->
+                           <td>
+                           <button class="button text" type="reset">Reset</button>
+                           </td>
+                           <td>
+                           <button class="button text" type="submit" name="submit">Sign Up</button>
+                           </td>
+                        </tr><!-- Buttons ends-->
+                     </table>
+                  </form>
+               </div><!-- form ends-->
+                  <p class="text1 ftxtsiz" style="color:black"><b>Have an account? <a class="a" href="#">Click here to Login!</a></b></p>
+
+            </div>
+         </div><!-- All Content Ends-->
+      </div><!-- Main Container Ends-->
+
+      
+      <script>
+         var preloader = document.getElementById('loadbox');
+         
+         function load()
+         {
+            
+            preloader.style.display = 'none';
+         }
+      </script>
+
+   </body>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</html>
